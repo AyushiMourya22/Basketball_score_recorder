@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASKETBALL</title>
+    <style>
+        body{
+            margin:0px 0px 0px 0px;
+            height: 710px;
+        }
+       
+        #container img{
+            z-index: 0px;
+        }
+        #img{
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqLXK4fJWIou-nRlgq2pFnHuLuYLoih_EVlg&usqp=CAU);
+            background-size: 100%;
+            filter: blur(5px);
+            width: 100%;
+            height: 100%;
+            background-position: center;
+        }
+        #container{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            position: absolute;
+            top: 20%;
+            left: 0%;
+            
+  
+        }
+        .head{
+            font-weight: bold;
+            color: black;
+            font-size: 40px;
+        }
+        .item1{
+            text-align: center;
+            border: 4px solid rgb(83, 83, 83);
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            z-index: 2;
+            background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.4);
+  width: 400px;
+  height: 450px;
+  
+}
+
+.item2{
+    border: 4px solid rgb(83, 83, 83);
+    text-align: center;
+            border-radius: 10px;
+            z-index: 2;
+            background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 400px;
+  height: 450px;
+      }
+
+      .item1 div{
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 30px;
+        color: black;
+    }
+    
+    .item1 button{
+        margin: 5px 5px 5px 5px;
+        border-radius: 3px;
+        /* font-weight: bold; */
+        border: none;
+        width: 250px;
+        font-size: 20px;
+        color: white;
+        background-color: #56406b;
+        height: 40px;
+    }
+    .item2 div{
+        color: black;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        font-size: 30px;
+    }
+    
+button :hover{
+    border: 1px solid white;
+}
+    .item2 button{
+        /* font-weight: bold; */
+        font-size: 20px;
+        height: 40px;
+          width: 250px;
+        margin: 5px 5px 5px 5px;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        background-color: #56406b;
+      }
+    </style>
+</head>
+<body>
+    <div id="img">
+        </div>
+    
+    <div id="container">
+        
+        <div class="item1">
+            <p class="head">TEAM A</p>
+            
+            <div id="score1">CURRENT SCORE:0</div>
+            <br>
+            <button id="p1" onclick="incre1()">INCREMENT</button>
+            <br>
+            <button id="click" onclick="save1()">SAVE POINTS</button>
+            <br>
+            <br>
+            <div id="string1">SCOREBOARD:0</div>
+            <br>
+            <div id="t1">TOTAL:0</div>
+            
+            
+        </div>
+        <div class="item2">
+            <p class="head">TEAM B</p>
+            <div id="score2">CURRENT SCORE:0</div>
+            <br>
+            <br>
+            <button id="p2" onclick="incre2()">INCREMENT</button>
+            <br>
+            <button id="click" onclick="save2()">SAVE POINTS</button>
+            <br>
+            <br>
+            <div id="string2">SCOREBOARD:0</div>
+            <br>
+            <div id="t2">TOTAL:0</div>
+        </div>
+        
+    </div>
+    <script>
+        let s1=document.getElementById("score1")
+        let s2=document.getElementById("score2")
+        let str1=""
+        let str2=""
+        let count1=0
+        let count2=0
+        let sum1=0
+        let sum2=0
+        function incre1(){
+            count1++
+            s1.textContent="CURRENT SCORE : "+count1
+        }
+        function incre2(){
+            count2++
+            s2.textContent="CURRENT SCORE : " +count2
+        }
+        function save1(){
+            str1+=count1+" "
+            sum1+=count1
+            document.getElementById("string1").textContent="SCOREBOARD : " + str1
+            count1=0
+            document.getElementById("t1").textContent="TOTAL : "+sum1
+            
+        }
+        function save2(){
+            str2+=count2+" "
+            sum2+=count2
+            document.getElementById("string2").textContent="SCOREBOARD : "+str2
+            count2=0
+            document.getElementById("t2").textContent="TOTAL : "+sum2
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
